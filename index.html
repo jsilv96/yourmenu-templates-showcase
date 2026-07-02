@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YourMenu Website Templates — Showcase</title>
+  <meta name="description" content="Explore YourMenu's professionally designed restaurant website templates. Pick a theme, launch a live demo, and get your restaurant online in minutes." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="YourMenu Website Templates" />
+  <meta property="og:description" content="Four beautiful, ready-to-launch restaurant website themes. Preview each live demo." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-soft: #151b23;
+      --card: #ffffff;
+      --ink: #12161c;
+      --ink-soft: #5a6472;
+      --line: #e7eaef;
+      --brand: #16a34a;
+      --brand-dark: #12833c;
+      --radius: 18px;
+      --shadow: 0 1px 2px rgba(16,22,28,.04), 0 12px 32px -12px rgba(16,22,28,.18);
+      --shadow-lg: 0 24px 60px -20px rgba(16,22,28,.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: #f6f8fa;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.15; letter-spacing: -.02em; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1140px, 92vw); margin-inline: auto; }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(246,248,250,.82);
+      backdrop-filter: saturate(180%) blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.15rem; }
+    .logo .mark {
+      width: 32px; height: 32px; border-radius: 9px;
+      background: linear-gradient(135deg, var(--brand), #22c55e);
+      display: grid; place-items: center; color: #fff; font-size: 1rem;
+      box-shadow: 0 4px 12px -2px rgba(22,163,74,.5);
+    }
+    .logo .muted { color: var(--ink-soft); font-weight: 600; }
+    .nav-cta {
+      background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 999px;
+      font-weight: 600; font-size: .92rem; transition: transform .15s ease, background .15s ease;
+    }
+    .nav-cta:hover { background: #000; transform: translateY(-1px); }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 84px 0 56px; text-align: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid var(--line); border-radius: 999px;
+      padding: 7px 16px; font-size: .84rem; font-weight: 600; color: var(--ink-soft);
+      box-shadow: var(--shadow); margin-bottom: 26px;
+    }
+    .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 4px rgba(22,163,74,.15); }
+    .hero h1 { font-size: clamp(2.2rem, 5.2vw, 3.7rem); font-weight: 800; max-width: 15ch; margin-inline: auto; }
+    .hero h1 .grad { background: linear-gradient(120deg, var(--brand), #34d399); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { color: var(--ink-soft); font-size: clamp(1.02rem, 2vw, 1.22rem); max-width: 60ch; margin: 22px auto 0; }
+    .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px; font-weight: 600; font-size: .98rem;
+      padding: 14px 26px; border-radius: 999px; transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 10px 24px -8px rgba(22,163,74,.6); }
+    .btn-primary:hover { background: var(--brand-dark); transform: translateY(-2px); }
+    .btn-ghost { background: #fff; border: 1px solid var(--line); color: var(--ink); box-shadow: var(--shadow); }
+    .btn-ghost:hover { transform: translateY(-2px); }
+
+    /* ---------- Templates ---------- */
+    .section { padding: 40px 0 90px; }
+    .section-head { text-align: center; max-width: 60ch; margin: 0 auto 46px; }
+    .section-head h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); font-weight: 800; }
+    .section-head p { color: var(--ink-soft); margin-top: 12px; font-size: 1.05rem; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+      display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: #d7dce3; }
+
+    .thumb { position: relative; aspect-ratio: 1305 / 818; overflow: hidden; background: #eef1f5; }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .card:hover .thumb img { transform: scale(1.04); }
+    .thumb::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,17,23,.28), transparent 42%);
+      pointer-events: none;
+    }
+    .badge {
+      position: absolute; top: 14px; left: 14px; z-index: 2;
+      background: rgba(255,255,255,.92); backdrop-filter: blur(6px);
+      color: var(--ink); font-size: .74rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+      padding: 6px 12px; border-radius: 999px; box-shadow: var(--shadow);
+    }
+
+    .card-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
+    .card-body h3 { font-size: 1.42rem; font-weight: 800; display: flex; align-items: center; gap: 10px; }
+    .swatch { width: 14px; height: 14px; border-radius: 5px; flex-shrink: 0; }
+    .card-body .tag { color: var(--ink-soft); font-size: .82rem; font-weight: 600; margin-top: 4px; letter-spacing: .02em; }
+    .card-body p { color: var(--ink-soft); margin-top: 12px; font-size: .98rem; flex: 1; }
+
+    .card-actions { display: flex; gap: 10px; margin-top: 22px; }
+    .card-actions .btn { padding: 12px 20px; font-size: .92rem; }
+    .demo-btn { background: var(--ink); color: #fff; flex: 1; justify-content: center; }
+    .demo-btn:hover { background: #000; transform: translateY(-2px); }
+
+    /* ---------- CTA banner ---------- */
+    .cta {
+      background: linear-gradient(135deg, #0d1117, #16261b);
+      border-radius: 26px; padding: 58px 40px; text-align: center; color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .cta::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(600px 260px at 50% -10%, rgba(34,197,94,.28), transparent 70%);
+    }
+    .cta > * { position: relative; }
+    .cta h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800; }
+    .cta p { color: #b9c2cd; max-width: 52ch; margin: 16px auto 30px; font-size: 1.08rem; }
+
+    /* ---------- Footer ---------- */
+    footer { border-top: 1px solid var(--line); padding: 40px 0; margin-top: 20px; }
+    .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--ink-soft); font-size: .9rem; }
+    .foot a { font-weight: 600; }
+    .foot a:hover { color: var(--brand); }
+
+    .fade { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .fade.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a class="logo" href="#top">
+        <span class="mark">▤</span>
+        <span>Your<span class="muted">Menu</span></span>
+      </a>
+      <a class="nav-cta" href="https://www.yourmenu.com" target="_blank" rel="noopener">Get Started</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap">
+        <span class="pill"><span class="dot"></span> 4 ready-to-launch themes</span>
+        <h1>Beautiful websites, <span class="grad">built for restaurants</span></h1>
+        <p>Every YourMenu template comes with online ordering built in. Pick the look that fits your brand, preview it live, and be online today — no code required.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#templates">Browse templates ↓</a>
+          <a class="btn btn-ghost" href="https://www.yourmenu.com" target="_blank" rel="noopener">Talk to us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMPLATES -->
+    <section class="section" id="templates">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Choose your theme</h2>
+          <p>Four distinct designs, each optimized for speed, mobile, and conversions. Click any live demo to explore the full experience.</p>
+        </div>
+
+        <div class="grid">
+
+          <!-- DEFAULT -->
+          <article class="card fade">
+            <div class="thumb">
+              <span class="badge">Most popular</span>
+              <img src="images/default.png" alt="Default theme — Tommy's Tacos y Mas homepage" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3><span class="swatch" style="background:#16a34a"></span> Default</h3>
+              <span class="tag">Warm &middot; Versatile &middot; All-purpose</span>
+              <p>A friendly, flexible starting point that works for any cuisine — from taquerias to bakeries. Bold hero, clear calls to action, and everything a hungry customer needs up front.</p>
+              <div class="card-actions">
+                <a class="btn demo-btn" href="https://default.yourmenu-templates.com/" target="_blank" rel="noopener">View live demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- FRESH -->
+          <article class="card fade">
+            <div class="thumb">
+              <img src="images/fresh.png" alt="Fresh theme — Flame & Fork homepage" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3><span class="swatch" style="background:#fb6f7f"></span> Fresh</h3>
+              <span class="tag">Clean &middot; Modern &middot; Energetic</span>
+              <p>Bright, crisp, and fast-casual. Punchy coral accents and generous imagery make Fresh perfect for burger joints, cafés, and comfort-food spots that want to feel current.</p>
+              <div class="card-actions">
+                <a class="btn demo-btn" href="https://fresh.yourmenu-templates.com/" target="_blank" rel="noopener">View live demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- SMOKEHOUSE -->
+          <article class="card fade">
+            <div class="thumb">
+              <img src="images/smokehouse.png" alt="Smokehouse theme — Ember & Iron homepage" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3><span class="swatch" style="background:#f5d90a"></span> Smokehouse</h3>
+              <span class="tag">Dark &middot; Bold &middot; Rugged</span>
+              <p>Moody, high-contrast, and unapologetically hearty. Built for BBQ pits, grills, taprooms, and sports bars where the food is serious and the vibe is loud.</p>
+              <div class="card-actions">
+                <a class="btn demo-btn" href="https://smokehouse.yourmenu-templates.com/" target="_blank" rel="noopener">View live demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- COASTAL -->
+          <article class="card fade">
+            <div class="thumb">
+              <img src="images/coastal.png" alt="Coastal theme — Oliva & Mare homepage" loading="lazy" />
+            </div>
+            <div class="card-body">
+              <h3><span class="swatch" style="background:#7fb0b3"></span> Coastal</h3>
+              <span class="tag">Elegant &middot; Airy &middot; Refined</span>
+              <p>Serene and upscale, with editorial typography and breezy tones. Ideal for seafood houses, Mediterranean kitchens, and any restaurant with a fine-dining touch.</p>
+              <div class="card-actions">
+                <a class="btn demo-btn" href="https://coastal.yourmenu-templates.com/" target="_blank" rel="noopener">View live demo ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="cta fade">
+          <h2>Found the one?</h2>
+          <p>We'll set up your chosen theme, load your menu, and turn on online ordering — usually the same day. No fees to look around.</p>
+          <a class="btn btn-primary" href="https://www.yourmenu.com" target="_blank" rel="noopener">Get your website</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>&copy; <span id="year">2026</span> YourMenu. All rights reserved.</span>
+      <a href="https://www.yourmenu.com" target="_blank" rel="noopener">yourmenu.com &nearr;</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Reveal-on-scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade').forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
